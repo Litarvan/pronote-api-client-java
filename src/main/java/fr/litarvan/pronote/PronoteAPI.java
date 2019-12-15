@@ -34,16 +34,13 @@ import java.nio.charset.StandardCharsets;
  * <pre>
  *     PronoteAPI api = new PronoteAPI("http://127.0.0.1:21727/");
  *
- *     LoginResponse response = api.login(new LoginRequest("username", "password", "pronote url", "cas");
- *     if (response.getError() != null) {
- *         return ....
+ *     try {
+ *         api.login(new LoginRequest("username", "password", "pronote url", "cas");
+ *     } catch (RequestException e) {
+ *         // ...
  *     }
  *
  *     FetchResponse response = api.fetch(new FetchResponse("username", "password", "pronote url", "cas");
- *     if (response.getError() != null) {
- *         return ...
- *     }
- *
  *     System.out.println(String.format("Welcome %s !", response.getName()));
  * </pre>
  *
